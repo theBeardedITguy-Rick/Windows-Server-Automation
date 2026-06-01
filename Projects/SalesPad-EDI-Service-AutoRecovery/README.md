@@ -82,7 +82,7 @@ SalesPad-EDI-Service-AutoRecovery
 
 ![Trigger](Screenshots/TaskScheduler-Trigger.png)
 
-![Trigger Setup](Screenshots/TaskScheduler-Trigger-Setup.png)
+![Trigger Settings](Screenshots/TaskScheduler-Trigger-Settings.png)
 
 ![Action](Screenshots/TaskScheduler-Action.png)
 
