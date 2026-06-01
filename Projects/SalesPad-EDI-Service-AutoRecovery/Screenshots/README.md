@@ -6,7 +6,7 @@
 
 ![Trigger](Screenshots/TaskScheduler-Trigger.png)
 
-![Trigger](Screenshots/TaskScheduler-Trigger-Setup.png)
+![Trigger Setup](Screenshots/TaskScheduler-Trigger-Setup.png)
 
 ![Action](Screenshots/TaskScheduler-Action.png)
 
