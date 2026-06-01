@@ -33,10 +33,7 @@ The script:
 
 ### Servers
 
-* HS1
 * HS2
-* HS3
-* HS4
 
 ### Service
 
