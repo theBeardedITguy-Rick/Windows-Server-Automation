@@ -39,7 +39,7 @@ Using SharePoint Online PowerShell, administrative ownership was granted to an a
 ## Step 1: Connect to SharePoint Online
 
 ```powershell
-Connect-SPOService -Url https://"insert_user_company".sharepoint.com
+Connect-SPOService -Url "https://tenant-admin.sharepoint.com"
 ```
 
 ---
@@ -47,7 +47,7 @@ Connect-SPOService -Url https://"insert_user_company".sharepoint.com
 ## Step 2: Verify OneDrive Site Status
 
 ```powershell
-Get-SPOSite -Identity "https://"insert_user_company".sharepoint.com/personal/insert_user_email" |
+Get-SPOSite -Identity "https://tenant-my.sharepoint.com/personal/user_company_com" |
 Select Url, LockState, Status
 ```
 
@@ -67,7 +67,7 @@ The site was active but locked in a ReadOnly state.
 
 ```powershell
 Set-SPOSite `
--Identity "https://"insert_user_company".sharepoint.com/personal/insert_user_email" `
+-Identity "https://tenant-my.sharepoint.com/personal/user_company_com" `
 -LockState Unlock
 ```
 
@@ -97,8 +97,8 @@ The OneDrive site was successfully unlocked.
 
 ```powershell
 Set-SPOUser `
--Site "https://"insert_user_company".sharepoint.com/personal/insert_user_email" `
--LoginName "insert_other_user_email" `
+-Site "https://tenant-my.sharepoint.com/personal/user_company_com" `
+-LoginName "admin@company.com" `
 -IsSiteCollectionAdmin $true
 ```
 
