@@ -1,4 +1,4 @@
-# Recovering Access to a Former Employee's OneDrive Using SharePoint Online PowerShell
+# OneDrive Recovery and Administrative Access Assignment Using SharePoint Online PowerShell
 
 ## Overview
 
@@ -54,9 +54,9 @@ Select Url, LockState, Status
 ### Initial Output
 
 ```text
-Url                                                                   LockState Status
----                                                                   --------- ------
-https://"insert_user_company".sharepoint.com/personal/...            ReadOnly  Active
+Url                                                         LockState Status
+---                                                         --------- ------
+https://tenant-my.sharepoint.com/personal/user_company_com  ReadOnly  Active
 ```
 
 The site was active but locked in a ReadOnly state.
@@ -77,16 +77,16 @@ Set-SPOSite `
 
 ```powershell
 Get-SPOSite `
--Identity "https://"insert_user_company".sharepoint.com/personal/insert_user_email" |
+-Identity "https://tenant-my.sharepoint.com/personal/user_company_com" |
 Select Url, LockState, Status
 ```
 
 ### Verification Output
 
 ```text
-Url                                                                   LockState Status
----                                                                   --------- ------
-https://"insert_user_company".sharepoint.com/personal/...            Unlock    Active
+Url                                                         LockState Status
+---                                                         --------- ------
+https://tenant-my.sharepoint.com/personal/user_company_com  Unlock    Active
 ```
 
 The OneDrive site was successfully unlocked.
@@ -105,9 +105,9 @@ Set-SPOUser `
 ### Result
 
 ```text
-Display Name      Login Name                          User Type
-------------      ----------                          ---------
-Rxxxxxx Cxxxxxx  insert_user_email                    Member
+Display Name      Login Name          User Type
+------------      ----------          ---------
+Admin User        admin@company.com   Member
 ```
 
 Administrative permissions were successfully assigned to the designated user.
@@ -116,15 +116,11 @@ Administrative permissions were successfully assigned to the designated user.
 
 ## Outcome
 
-✅ Connected to SharePoint Online Admin Center
-
-✅ Verified OneDrive site status
-
-✅ Removed ReadOnly restrictions
-
-✅ Assigned Site Collection Administrator permissions
-
-✅ Restored access for file recovery and business continuity operations
+- Successfully connected to SharePoint Online Admin Center
+- Verified OneDrive site status
+- Removed ReadOnly restrictions
+- Assigned Site Collection Administrator permissions
+- Restored access for file recovery and business continuity operations
 
 ---
 
@@ -146,34 +142,20 @@ Administrative permissions were successfully assigned to the designated user.
 ```text
 Windows-Server-Automation/
 │
-├── Projects/
-│   └── Recover-OneDrive-Admin-Access/
-│       ├── README.md
-│       ├── screenshots/
-│       │   └── OneDrive-Recovery-Process.png
-│       └── scripts/
-│           └── Recover-OneDrive.ps1
+└── Projects/
+    └── Recover-OneDrive-Admin-Access/
+        ├── README.md
+        ├── screenshots/
+        │   └── OneDrive-Recovery-Process.png
+        └── scripts/
+            └── Recover-OneDrive.ps1
 ```
 
 ---
 
-## Screenshot
+## Project Screenshot
 
-### OneDrive Recovery Process
-
-Include a screenshot showing:
-
-- SharePoint Online connection
-- Initial ReadOnly status
-- Unlock command execution
-- Verification of Unlock status
-- Site Collection Administrator assignment
-
-Example:
-
-```text
-screenshots/OneDrive-Recovery-Process.png
-```
+![OneDrive Recovery Process](screenshots/OneDrive-Recovery-Process.png)
 
 ---
 
